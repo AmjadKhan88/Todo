@@ -68,76 +68,19 @@ const sendBrowserNotification = (title, body) => {
   }
 };
 
-// Initial todos (fallback if no localStorage data)
-const initialTodosData = [
-  { 
-    id: 1, 
-    text: "Complete project proposal", 
-    completed: false, 
-    priority: "high", 
-    date: "2023-10-14",
-    time: "09:00", // Added time field
-    reminder: true // Added reminder flag
-  },
-  { 
-    id: 2, 
-    text: "Buy groceries for the week", 
-    completed: true, 
-    priority: "medium", 
-    date: "2023-10-16",
-    time: "18:00",
-    reminder: true
-  },
-  { 
-    id: 3, 
-    text: "Schedule dentist appointment", 
-    completed: false, 
-    priority: "low", 
-    date: "2023-10-17",
-    time: "14:30",
-    reminder: true
-  },
-  { 
-    id: 4, 
-    text: "Prepare presentation for meeting", 
-    completed: false, 
-    priority: "high", 
-    date: "2023-10-18",
-    time: "10:00",
-    reminder: true
-  },
-  { 
-    id: 5, 
-    text: "Read 30 pages of book", 
-    completed: false, 
-    priority: "low", 
-    date: "2023-10-11",
-    time: "20:00",
-    reminder: true
-  },
-  { 
-    id: 6, 
-    text: "Call insurance company", 
-    completed: true, 
-    priority: "medium", 
-    date: "2023-10-15",
-    time: "11:00",
-    reminder: true
-  }
-];
 
 // provider use this in Main.tsx
 export const TodoProvider = ({ children }) => {
   // Load initial data from localStorage or use default
   const [todos, setTodos] = useState(() => {
     const storedTodos = loadTodosFromStorage();
-    return storedTodos || initialTodosData;
+    return storedTodos || [];
   });
   
   // Keep a separate state for the original todos
   const [originalTodos, setOriginalTodos] = useState(() => {
     const storedTodos = loadTodosFromStorage();
-    return storedTodos || initialTodosData;
+    return storedTodos || [];
   });
 
   // State for showing reminders
@@ -391,7 +334,7 @@ export const TodoProvider = ({ children }) => {
   // Reset to initial todos
   const resetToInitial = () => {
     if (window.confirm("Are you sure you want to reset to initial todos? This will replace all current todos.")) {
-      updateTodos(initialTodosData);
+      updateTodos([]);
       setActiveReminders([]);
       remindersRef.current.clear();
     }
