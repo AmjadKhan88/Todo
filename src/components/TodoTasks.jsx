@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Bell, BellOff, Timer, Trash2 } from "lucide-react";
+import { Bell, BellDot, BellOff, Calendar, Timer, Trash2 } from "lucide-react";
 import { useTodo } from "../context/TodoContext";
 
 function TodoTasks({ task }) {
@@ -17,6 +17,7 @@ function TodoTasks({ task }) {
 
     return (
         <div className="task-item">
+            <div className="task-item-flex">
             <label class="container-checkbox">
               <input type="checkbox" checked={task.completed}  onChange={() => toggleComplete(task.id)}/>
               <div class="checkmark"></div>
@@ -26,22 +27,22 @@ function TodoTasks({ task }) {
                 <div className={`task-title ${task.completed ? "completed" : ""}`}>
                     {task.text}
                     {task.reminder && !task.completed && (
-                        <i className="fas fa-bell reminder-icon" 
+                        <BellDot width={15} className="fas fa-bell reminder-icon" 
                            title="Reminder enabled"
-                           style={{ color: '#ff9800', marginLeft: '8px' }}
-                        ></i>
+                           style={{ color: '#ff9800', marginLeft: '8px',marginTop:'3px' }}
+                        />
                     )}
                 </div>
                 <div className="task-meta">
                     <div className="task-priority">
-                        <span  className={`priority-indicator ${task.priority.toLowerCase()}`}></span>
-                        {task.priority} Priority
+                        <span  className={`priority-indicator ${task.priority === 'high' ? 'priority-high' : task.priority === 'medium' ? 'priority-medium' : 'priority-low'}`}></span>
+                        <span style={{whiteSpace:'nowrap'}}>{task.priority + ' Priority'}</span>
                     </div>
                     <div className="task-date">
-                        <i className="far fa-calendar"></i> {taskDate.toLocaleDateString()}
+                         {taskDate.toLocaleDateString().replace(/\//g, '-')}
                         {task.time && (
-                            <span className="task-time" style={{display:'flex',gap:'3px',alignItems:'center'}}>
-                                <Timer width={15}/> {task.time}
+                            <span className="task-time" >
+                                <Timer width={15}/> {task.time + ':00'}
                             </span>
                         )}
                     </div>
@@ -60,6 +61,8 @@ function TodoTasks({ task }) {
                     </div>
                 </div>
             </div>
+          </div>
+
             <div className="task-actions">
                 <button
                     className={`task-action-btn ${task.reminder ? 'reminder-active' : ''}`}
