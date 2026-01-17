@@ -8,22 +8,7 @@ A sleek, modern todo application built with React and Vite, designed to help you
 
 ## 🎬 Live Demo Preview
 
-<div align="center" style="margin: 2rem 0;">
-  <iframe 
-    src="https://prostackcreations-todo.vercel.app" 
-    width="100%" 
-    height="500px" 
-    style="border: 2px solid #e1e4e8; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);"
-    title="Todo App Live Demo"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-  <p align="center" style="margin-top: 1rem;">
-    <a href="https://prostackcreations-todo.vercel.app" target="_blank">
-      <strong>✨ Open App in New Tab</strong>
-    </a>
-  </p>
-</div>
+[![Todo App Screenshot](https://via.placeholder.com/800x450/4a90e2/ffffff?text=Todo+App+Screenshot)](https://prostackcreations-todo.vercel.app)
 
 ## ✨ Features
 
