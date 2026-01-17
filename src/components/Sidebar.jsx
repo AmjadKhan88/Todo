@@ -15,7 +15,7 @@ function Sidebar() {
     };
     
     return (
-        <aside className="sidebar">
+        <aside className="sidebar left-column">
             <div className="stats-container">
                 <h3 className="stats-title"><i className="fas fa-chart-bar"></i> Task Statistics</h3>
                 <div className="stats-grid">

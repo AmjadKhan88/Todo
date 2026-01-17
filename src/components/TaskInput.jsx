@@ -10,7 +10,7 @@ function TaskInput() {
     const [toggleNotification, setToggleNotification] = useState(false);
 
     return (
-        <main className="main-content container-model">
+        <main className="main-content container-model right-column">
            
            {toggleForm &&<TaskForm addTodo={addTodo} setToggleForm={setToggleForm}/>}
            {toggleNotification && <ReminderNotifications setToggleNotification={setToggleNotification}/>}

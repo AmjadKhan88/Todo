@@ -8,7 +8,7 @@ function Home() {
     <>
     <div className="container">
         <header>
-            <h1>Advanced To-Do List</h1>
+            <h1>ProStack Todo</h1>
             <p className="tagline">Stay organized and boost your productivity</p>
         </header>
         

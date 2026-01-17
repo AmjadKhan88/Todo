@@ -58,16 +58,31 @@ h1 {
   font-size: 1.1rem;
 }
 
+
+
 .app-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  display: flex;
   gap: 25px;
   margin-bottom: 30px;
 }
 
+.left-column {
+  flex: 1;
+  min-width: 0; /* Prevents content overflow */
+}
+
+.right-column {
+  flex: 1.5;
+  min-width: 0; /* Prevents content overflow */
+}
+
 @media (max-width: 768px) {
   .app-container {
-    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+  }
+  .left-column,
+  .right-column {
+    width: 100%; /* Full width on mobile */
   }
 }
 
@@ -819,5 +834,9 @@ footer {
   .task-actions {
     align-self: flex-end;
   }
+
+  .header {
+  padding: 10px;
+ }
 }
 
