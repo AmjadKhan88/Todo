@@ -8,7 +8,7 @@ A sleek, modern todo application built with React and Vite, designed to help you
 
 ## 🎬 Live Demo Preview
 
-[![Todo App Screenshot](https://github.com/AmjadKhan88/Todo/public)](https://prostackcreations-todo.vercel.app)
+[![Todo App Screenshot](https://github.com/AmjadKhan88/Todo/public/Screenshot 2026-01-17 110545.png)](https://prostackcreations-todo.vercel.app)
 
 ## ✨ Features
 
